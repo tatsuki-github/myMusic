@@ -880,6 +880,7 @@ function displayNote(){
   rhythmDisplayFirst();
   changeRythm();
   changeTempo();
+  preparePlay();
   ABCJS.renderAbc("note","M:4/4\nL:1/4\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `"F"` + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `"G"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `"C"` + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{responsive: "resize",paddingtop:"0",paddingbottom:"8"});
 }  
 
