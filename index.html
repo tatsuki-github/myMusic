@@ -715,12 +715,12 @@ function playSingleNote(note) {
 
 //選択肢表示・非表示
 function rhythmDisplayFirst(){
-  for(i = 0; i < rhythm_category.length/2; i++){
+  for(i = 0; i < rhythm_category.length; i++){
     note_category[i].style.visibility = "visible";
     rhythm_category[i].style.visibility = "visible";
   }
 
-  for(i = 1; i < rhythm_category.length/2; i+=2){
+  for(i = 1; i < rhythm_category.length; i+=2){
     if(rhythm_category[i-1].value == "ta__n"){
       rhythm_category[i].style.visibility = "hidden";
       note_category[i].style.visibility = "hidden";
@@ -741,7 +741,7 @@ function rhythmDisplayFirst(){
     note_category[0].style.visibility = "visible";
   }
   
-  for(i = 1; i < rhythm_category.length/2; i++){
+  for(i = 1; i < rhythm_category.length; i++){
     if(rhythm_category[i].value == "un"){
       note_category[i].style.visibility = "hidden";
     }
@@ -756,7 +756,7 @@ function rhythmDisplayFirst(){
 
 
 function rhythmDisplayFirstClear(){
-  for(i = 0; i < rhythm_category.length/2; i++){
+  for(i = 0; i < rhythm_category.length; i++){
     note_category[i].style.visibility = "hidden";
     rhythm_category[i].style.visibility = "hidden";
   }
