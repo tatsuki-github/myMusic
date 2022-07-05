@@ -21,7 +21,7 @@
         />
 </head>
 
-<body>
+<body onload="load()">
 <div class="rhythm_img">
   <div class="div">
     <p>①</p>
@@ -538,16 +538,15 @@
     </div>
   </div>
 </div>
-
-
-
 <script>
   /*
   window.addEventListener("load", function(){
     displayNote();
   }, false)
 */
-  window.onload = displayNote;
+function load(){
+  displayNote();
+}
 
 //リズム再生
 document.getElementById("tan").addEventListener("click", function() {
@@ -1044,7 +1043,5 @@ function preparePlay(){
 }
 
 </script>
-
-
 </body>
 </html>
