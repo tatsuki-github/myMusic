@@ -549,6 +549,10 @@
 */
   window.onload = displayNote;
 
+  document.getElementsByClassName("abcjs-midi-start").onclick = function(){
+    audioSourse.start(0);
+  }
+
 //リズム再生
 document.getElementById("tan").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
