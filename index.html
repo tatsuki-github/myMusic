@@ -105,7 +105,7 @@
       <option value="only_code">コードのみ</option>
       <option value="only_melody">旋律のみ</option>
     </select>
-    <div id="player" style="width:320px;"></div>  
+    <div id="audio" style="width:320px;"></div>  
   </div>
 </div>
 
@@ -757,14 +757,14 @@ function changeTempo(){
   case "tempo_60":
     switch (play_mode.value){
       case "play":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
         "\nV:2\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" ,{qpm:60});
           break;  
       case "only_code":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:60});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:60});
           break;
       case "only_melody":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:60});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:60});
           break;
       default: 
     }    
@@ -772,14 +772,14 @@ function changeTempo(){
   case "tempo_80":
     switch (play_mode.value){
       case "play":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
         "\nV:2\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" ,{qpm:80});
           break;  
       case "only_code":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:80});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:80});
           break;
       case "only_melody":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:80});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:80});
           break;
       default: 
     }    
@@ -787,14 +787,14 @@ function changeTempo(){
   case "tempo_100":
     switch (play_mode.value){
       case "play":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
         "\nV:2\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" ,{qpm:100});
           break;  
       case "only_code":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:100});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:100});
           break;
       case "only_melody":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:100});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:100});
           break;
       default: 
     }  
@@ -802,14 +802,14 @@ function changeTempo(){
   case "tempo_120":
     switch (play_mode.value){
       case "play":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
         "\nV:2\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" ,{qpm:120});
           break;  
       case "only_code":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:120});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:120});
           break;
       case "only_melody":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:120});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:120});
           break;
       default: 
     }    
@@ -817,14 +817,14 @@ function changeTempo(){
   case "tempo_140":
     switch (play_mode.value){
       case "play":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
         "\nV:2\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" ,{qpm:140});
           break;  
       case "only_code":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:140});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:140});
           break;
       case "only_melody":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:140});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:140});
           break;
       default: 
     }    
@@ -832,14 +832,14 @@ function changeTempo(){
   case "tempo_160":
     switch (play_mode.value){
       case "play":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
         "\nV:2\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" ,{qpm:160});
           break;  
       case "only_code":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:160});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:160});
           break;
       case "only_melody":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:160});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:160});
           break;
       default: 
     }       
@@ -847,14 +847,14 @@ function changeTempo(){
   default: 
     switch (play_mode.value){
       case "play":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|" +
         "\nV:2\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" ,{qpm:100});
           break;  
       case "only_code":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:100});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\nV:1\n" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|" + `"F"[F2A2c2f2]"F"[F2A2c2f2]` + "|" + `"G"[G2B2D2d2]"G"[G2B2D2d2]` +  "|" + `"C"[C2E2G2c2]"C"[C2E2G2c2]` + "|",{qpm:100});
           break;
       case "only_melody":
-        ABCJS.renderMidi( "player","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:100});
+        ABCJS.renderMidi( "audio","M:4/4\nL:1/4\nK:C\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{qpm:100});
           break;
       default: 
     }    
