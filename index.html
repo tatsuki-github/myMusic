@@ -539,11 +539,8 @@
   </div>
 </div>
 <script>
-  /*
-  window.addEventListener("load", function(){
-    displayNote();
-  }, false)
-*/
+
+//ロード
 function load(){
   rhythmDisplayFirst();
   changeRythm();
@@ -699,6 +696,7 @@ function playSingleNote(note) {
     const play_mode = document.getElementById("play_mode");
     play_mode.onchange = displayNote;
     const notes = new Array(16); 
+
 
 //選択肢表示・非表示
 function rhythmDisplayFirst(){
