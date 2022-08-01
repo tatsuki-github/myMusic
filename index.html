@@ -24,47 +24,38 @@
 <body onload="load()">
 <div class="rhythm_img">
   <div class="div">
-    <p>①</p>
     <img src="img/tan.jpg" alt="" id="tan">
   </div>
 
   <div>
-    <p>②</p>
     <img src="img/tata.jpg" alt="" id="tata">
   </div>
     
   <div>
-    <p>③</p>
     <img src="img/un.jpg" alt="" id="un">
   </div>
 
   <div>
-    <p>④</p>
     <img src="img/tau.jpg" alt="" id="tau">
   </div>
 
   <div>
-    <p>⑤</p>
     <img src="img/uta.jpg" alt="" id="uta">
   </div>
 
   <div>
-    <p>⑥</p>
     <img src="img/takka.png" alt="" id="takka">
   </div>
 
   <div>
-    <p>⑦</p>
     <img src="img/ta__n.jpg" alt="" id="ta__n">
   </div>
 
   <div>
-    <p>⑧</p>
     <img src="img/ta_nta.jpg" alt="" id="ta_nta">
   </div>
     
   <div>
-    <p>⑨</p>
     <img src="img/tata_n.jpg" alt="" id="tata_n">
   </div>
 </div>
@@ -94,6 +85,13 @@
 <div id="first">
   <div id="paper"></div>
 </div>
+
+<div class="beat">
+  <input id="eighthNote" type="radio" name="beat" value="eighthNote" checked>8分音符
+  <input id="quarterNote" type="radio" name="beat" value="quarterNote">４部音符
+  <input id="halfNote" type="radio" name="beat" value="halfNote">2分音符
+</div>
+
 <div class="piano">
   <div class="key white" id="do"><p>ド</p></div>
   <div class="black"></div>
@@ -357,130 +355,99 @@ function preparePlay(){
 
 
 //音源
-function playSingleNote(note) {
+function playSingleNote(note,beat) {
   const synth = new Tone.Synth().toDestination();
-  synth.triggerAttackRelease(note, "4n");
+  synth.triggerAttackRelease(note, beat);
 }
 
+let eighthNote = document.getElementById("eighthNote");
+let quarterNote = document.getElementById("quarterNote");
+let halfNote = document.getElementById("halfNote");
+
 let notesCount = 0;
+
+function soundAndDisplayNote(sound,display) {
+  if(eighthNote.checked){
+      if(notesCount%2 == 0){
+        playSingleNote(sound,"8n");
+        notes[notesCount] = display;
+      }
+      else{
+        playSingleNote(sound,"8n");
+        notes[notesCount] = display + " ";
+      }
+      notesCount++;
+    }
+    else if(quarterNote.checked){
+      if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31){
+        
+      }
+      else{
+        playSingleNote(sound,"4n");
+        notes[notesCount] = display + "2";
+        notesCount+=2;
+      }
+    }
+    else if(halfNote.checked){
+      if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31){
+        
+      }
+      else{
+        playSingleNote(sound,"2n");
+        notes[notesCount] = display + "4";
+        notesCount+=4;
+      }
+    }
+}
+
 //鍵盤音階再生
 document.getElementById("do").addEventListener("click", function() {
-    playSingleNote("C4");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "C";
-    }
-    else{
-    notes[notesCount] = "C ";
-    }
-    notesCount++;
+    soundAndDisplayNote("C4","C");
     displayNote();
 }, false);
 
   document.getElementById("re").addEventListener("click", function() {
-    playSingleNote("D4");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "D";
-    }
-    else{
-    notes[notesCount] = "D ";
-    }
-    notesCount++;
+    soundAndDisplayNote("D4","D");
     displayNote();
 }, false);
 
   document.getElementById("mi").addEventListener("click", function() {
-    playSingleNote("E4");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "E";
-    }
-    else{
-    notes[notesCount] = "E ";
-    }
-    notesCount++;
+    soundAndDisplayNote("E4","E");
     displayNote();
 }, false);
 
   document.getElementById("fa").addEventListener("click", function() {
-    playSingleNote("F4");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "F";
-    }
-    else{
-    notes[notesCount] = "F ";
-    }
-    notesCount++;
+    soundAndDisplayNote("F4","F");
     displayNote();
 }, false);
 
   document.getElementById("so").addEventListener("click", function() {
-    playSingleNote("G4");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "G";
-    }
-    else{
-    notes[notesCount] = "G ";
-    }
-    notesCount++;
+    soundAndDisplayNote("G4","G");
     displayNote();
 }, false);
 
   document.getElementById("ra").addEventListener("click", function() {
-    playSingleNote("A4");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "A";
-    }
-    else{
-    notes[notesCount] = "A ";
-    }
-    notesCount++;
+    soundAndDisplayNote("A4","A");
     displayNote();
 }, false);
 
   document.getElementById("shi").addEventListener("click", function() {
-    playSingleNote("B4");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "B";
-    }
-    else{
-    notes[notesCount] = "B ";
-    }
-    notesCount++;
+    soundAndDisplayNote("B4","B");
     displayNote();
 }, false);
 
   document.getElementById("do_high").addEventListener("click", function() {
-    playSingleNote("C5");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "c";
-    }
-    else{
-    notes[notesCount] = "c ";
-    }
-    notesCount++;
+    soundAndDisplayNote("C5","c");
     displayNote();
 }, false);
 
   document.getElementById("re_high").addEventListener("click", function() {
-    playSingleNote("D5");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "d";
-    }
-    else{
-    notes[notesCount] = "d ";
-    }
-    notesCount++;
+    soundAndDisplayNote("D5","d");
     displayNote();
 }, false);
 
   document.getElementById("mi_high").addEventListener("click", function() {
-    playSingleNote("E5");
-    if(notesCount%2 == 0){
-    notes[notesCount] = "e";
-    }
-    else{
-    notes[notesCount] = "e ";
-    }
-    notesCount++;
+    soundAndDisplayNote("E5","e");
     displayNote();
 }, false);
 
