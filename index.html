@@ -366,9 +366,14 @@ let halfNote = document.getElementById("halfNote");
 
 let notesCount = 0;
 
+const wrong = new Audio('audio/wrong.mp3');
+
 function soundAndDisplayNote(sound,display) {
   if(eighthNote.checked){
-      if(notesCount%2 == 0){
+      if(notesCount >= 32){
+        wrong.play();
+      }
+      else if(notesCount%2 == 0){
         playSingleNote(sound,"8n");
         notes[notesCount] = display;
       }
@@ -379,8 +384,8 @@ function soundAndDisplayNote(sound,display) {
       notesCount++;
     }
     else if(quarterNote.checked){
-      if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31){
-        
+      if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31 || notesCount >= 32){
+        wrong.play();
       }
       else{
         playSingleNote(sound,"4n");
@@ -389,8 +394,8 @@ function soundAndDisplayNote(sound,display) {
       }
     }
     else if(halfNote.checked){
-      if(notesCount == 5 || notesCount == 6 || notesCount == 7 || notesCount == 13 || notesCount == 14 || notesCount == 15 || notesCount == 21 || notesCount == 22 || notesCount == 23 || notesCount == 29 || notesCount == 30 || notesCount == 31){
-        
+      if(notesCount == 5 || notesCount == 6 || notesCount == 7 || notesCount == 13 || notesCount == 14 || notesCount == 15 || notesCount == 21 || notesCount == 22 || notesCount == 23 || notesCount == 29 || notesCount == 30 || notesCount == 31 || notesCount >= 32){
+        wrong.play();
       }
       else{
         playSingleNote(sound,"2n");
