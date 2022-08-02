@@ -90,6 +90,8 @@
   <input id="eighthNote" type="radio" name="beat" value="eighthNote">8分音符
   <input id="quarterNote" type="radio" name="beat" value="quarterNote" checked>４部音符
   <input id="halfNote" type="radio" name="beat" value="halfNote">2分音符
+  <button id="eighthRest">８分休符</button>
+  <button id="quarterRest">4分休符</button>
 </div>
 
 <div class="piano">
@@ -404,6 +406,33 @@ function soundAndDisplayNote(sound,display) {
       }
     }
 }
+
+document.getElementById("eighthRest").addEventListener("click", function() {
+  if(notesCount >= 32){
+        wrong.play();
+      }
+  else if(notes[notesCount - 1] == "z"){
+    notes[notesCount - 1] = "z2";
+    notesCount++;
+    displayNote();
+  }
+  else{
+    notes[notesCount] = "z";
+    notesCount++;
+    displayNote();
+  }
+}, false);
+
+document.getElementById("quarterRest").addEventListener("click", function() {
+  if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31 || notesCount >= 32){
+        wrong.play();
+      }
+      else{
+        notes[notesCount] = "z2";
+        notesCount+=2;
+        displayNote();
+      }
+}, false);
 
 //鍵盤音階再生
 document.getElementById("do").addEventListener("click", function() {
