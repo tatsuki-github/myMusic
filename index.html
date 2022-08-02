@@ -411,13 +411,13 @@ document.getElementById("eighthRest").addEventListener("click", function() {
   if(notesCount >= 32){
         wrong.play();
       }
-  else if(notes[notesCount - 1] == "z"){
+  else if(notes[notesCount - 1] == " z"){
     notes[notesCount - 1] = "z2";
     notesCount++;
     displayNote();
   }
   else{
-    notes[notesCount] = "z";
+    notes[notesCount] = " z";
     notesCount++;
     displayNote();
   }
