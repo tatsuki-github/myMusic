@@ -448,7 +448,10 @@ document.getElementById("quarterRest").addEventListener("click", function() {
 }, false);
 
 document.getElementById("oneBack").addEventListener("click", function() {
-  if(notes[notesCount-1] == "C" || notes[notesCount-1] == "D" || notes[notesCount-1] == "E" || notes[notesCount-1] == "F" || notes[notesCount-1] == "G" || notes[notesCount-1] == "A" || notes[notesCount-1] == "B" || notes[notesCount-1] == "c" || notes[notesCount-1] == "d" || notes[notesCount-1] == "e" || notes[notesCount-1] == "C " || notes[notesCount-1] == "D " || notes[notesCount-1] == "E " || notes[notesCount-1] == "F " || notes[notesCount-1] == "G " || notes[notesCount-1] == "A " || notes[notesCount-1] == "B " || notes[notesCount-1] == "c " || notes[notesCount-1] == "d " || notes[notesCount-1] == "e "){
+  if(notesCount == 0){
+    wrong.play();
+  }
+  else if(notes[notesCount-1] == "C" || notes[notesCount-1] == "D" || notes[notesCount-1] == "E" || notes[notesCount-1] == "F" || notes[notesCount-1] == "G" || notes[notesCount-1] == "A" || notes[notesCount-1] == "B" || notes[notesCount-1] == "c" || notes[notesCount-1] == "d" || notes[notesCount-1] == "e" || notes[notesCount-1] == "C " || notes[notesCount-1] == "D " || notes[notesCount-1] == "E " || notes[notesCount-1] == "F " || notes[notesCount-1] == "G " || notes[notesCount-1] == "A " || notes[notesCount-1] == "B " || notes[notesCount-1] == "c " || notes[notesCount-1] == "d " || notes[notesCount-1] == "e "){
     notes[notesCount-1] = "";
     notesCount--;
     displayNote();
