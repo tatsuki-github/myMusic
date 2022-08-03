@@ -89,6 +89,7 @@
 <div class="beat">
   <input id="eighthNote" type="radio" name="beat" value="eighthNote">8分音符
   <input id="quarterNote" type="radio" name="beat" value="quarterNote" checked>４部音符
+  <input id="dottedQuarterNote" type="radio" name="beat" value="dottedQuarterNote">付点４部音符
   <input id="halfNote" type="radio" name="beat" value="halfNote">2分音符
   <button id="eighthRest">８分休符</button>
   <button id="quarterRest">4分休符</button>
@@ -364,6 +365,7 @@ function playSingleNote(note,beat) {
 
 let eighthNote = document.getElementById("eighthNote");
 let quarterNote = document.getElementById("quarterNote");
+let dottedQuarterNote = document.getElementById("dottedQuarterNote");
 let halfNote = document.getElementById("halfNote");
 
 let notesCount = 0;
@@ -393,6 +395,16 @@ function soundAndDisplayNote(sound,display) {
         playSingleNote(sound,"4n");
         notes[notesCount] = display + "2";
         notesCount+=2;
+      }
+    }
+    else if(dottedQuarterNote.checked){
+      if(notesCount == 6 || notesCount == 7 || notesCount == 14 || notesCount == 15 || notesCount == 22 || notesCount == 23 || notesCount == 30 || notesCount == 31 || notesCount >= 32){
+        wrong.play();
+      }
+      else{
+        playSingleNote(sound,"3n");
+        notes[notesCount] = display + "3";
+        notesCount+=3;
       }
     }
     else if(halfNote.checked){
