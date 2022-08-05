@@ -216,7 +216,7 @@ function setPlay(time, note) {
 
 function melodyAndChordRenderMidi(bpm) {
   ABCJS.renderMidi( "audio","M:4/4\nL:1/8\nK:C\nV:1\n" + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6] + notes[7] + "|" + `${notes[8]}`  + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14] + notes[15] + "|" + `${notes[16]}`  + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22] + notes[23] + "|" + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30] + notes[31] + "|" +
-        "\nV:2\n" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" + `"F"[F4A4c4f4]"F"[F4A4c4f4]` + "|" + `"G"[G4B4D4d4]"G"[G4B4D4d4]` +  "|" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" ,{qpm:bpm,chordsOff:true});
+        "\nV:2\n" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" + `"F"[F4A4c4f4]"F"[F4A4c4f4]` + "|" + `"G"[G4B4D4d4]"G"[G4B4D4d4]` +  "|" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" ,{generateDownload: true,qpm:bpm,chordsOff:true});
 }
 
 function melodyRenderMidi(bpm) {
