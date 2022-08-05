@@ -121,19 +121,18 @@ function load(){
   for(i = 0; i < 32; i++){
     notes[i] = " ";
   }
+  changeTempo();
   ABCJS.renderAbc("paper","M:4/4\nL:1/8\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|"  ,{responsive: "resize",paddingtop:"0",paddingbottom:"8"});
 }
 
 //リズム再生
 document.getElementById("tan").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   synth.triggerAttackRelease("E4", "4n");
 }, false);
 
 document.getElementById("tata").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   const melodyList = [{note: "E4", duration: "8n"},{note: "E4", duration: "8n"}];
   function setPlay(time, note) {
   synth.triggerAttackRelease(note.note, note.duration, time);
@@ -145,7 +144,6 @@ document.getElementById("tata").addEventListener("click", function() {
 
 document.getElementById("tau").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   const melodyList = [{note: "E4", duration: "8n"},null];
 
 function setPlay(time, note) {
@@ -158,7 +156,6 @@ function setPlay(time, note) {
 
 document.getElementById("uta").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   const melodyList = [null,{note: "E4", duration: "8n"}];
 
 function setPlay(time, note) {
@@ -171,7 +168,6 @@ function setPlay(time, note) {
 
 document.getElementById("takka").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   const melodyList = [{note: "E4", duration: "6n"},[null,{note: "E4", duration: "16n"}]];
 
 function setPlay(time, note) {
@@ -184,13 +180,11 @@ function setPlay(time, note) {
 
 document.getElementById("ta__n").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   synth.triggerAttackRelease("E4", "2n");
 }, false);
 
 document.getElementById("ta_nta").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   const melodyList = [[{note: "E4", duration: "3n"}],null,[null,{note: "E4", duration: "8n"}]];
 
 function setPlay(time, note) {
@@ -203,7 +197,6 @@ function setPlay(time, note) {
 
 document.getElementById("tata_n").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  changeTempo();
   const melodyList = [[{note: "E4", duration: "8n"}],[{note: "E4", duration: "3n"}]];
 
 function setPlay(time, note) {
@@ -219,7 +212,6 @@ function setPlay(time, note) {
 //全体で使う変数や設定など
     const tempo_category = document.getElementById("tempo_category");
     const play_mode = document.getElementById("play_mode");
-    play_mode.onchange = displayNote;
     const notes = new Array(32); 
 
 function melodyAndChordRenderMidi(bpm) {
@@ -239,6 +231,8 @@ function chordRenderMidi(bpm) {
 
 //テンポ切り替え
 tempo_category.onchange = changeTempo;
+play_mode.onchange = changeTempo;
+
 function changeTempo(){
   switch (tempo_category.value){
   case "tempo_60":
@@ -333,7 +327,6 @@ function changeTempo(){
 function displayNote(){
   changeTempo();
   ABCJS.renderAbc("paper","M:4/4\nL:1/8\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|"  ,{responsive: "resize",paddingtop:"0",paddingbottom:"8"});
-
 }  
 
 //楽譜表示切り替え
