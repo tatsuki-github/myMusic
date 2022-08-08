@@ -23,7 +23,7 @@
 
 <body onload="load()">
 <div class="rhythm_img">
-  <div class="div">
+  <div>
     <img src="img/tan.jpg" alt="" id="tan">
   </div>
 
@@ -61,7 +61,7 @@
 </div>
 
 
-<div class="tempo_and_piano">
+<div class="playSettings">
   <select name="tempo_category" id="tempo_category">
     <option value="tempo_60">&#9833; = 60</option>
     <option value="tempo_80">&#9833; = 80</option>
@@ -80,10 +80,7 @@
   </div>
 </div>
 
-
-<div id="first">
-  <div id="paper"></div>
-</div>
+<div id="paper"></div>
 
 <div class="beat">
   <input id="eighthNote" type="radio" name="beat" value="eighthNote">8分音符
@@ -226,7 +223,6 @@ function melodyRenderMidi(bpm) {
 function chordRenderMidi(bpm) {
   ABCJS.renderMidi( "audio","M:4/4\nL:1/8\nK:C\nV:1\n" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" + `"F"[F4A4c4f4]"F"[F4A4c4f4]` + "|" + `"G"[G4B4D4d4]"G"[G4B4D4d4]` +  "|" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|",{generateDownload: true,qpm:bpm,chordsOff:true});
 }
-
 
 
 //テンポ切り替え
@@ -509,8 +505,6 @@ document.getElementById("do").addEventListener("click", function() {
     soundAndDisplayNote("E5","e");
     displayNote();
 }, false);
-
-
 </script>
 </body>
 </html>

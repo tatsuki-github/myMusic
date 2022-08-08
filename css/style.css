@@ -18,50 +18,10 @@ select {
   font-weight: bold;
 }
 
-.item {
-  display: flex;
-  margin: -0.2vw 1.8vw 1vw 1vw;
-}
-
-.part {
-  display: flex;
-  width: 100vw;
-  height: auto;
-  margin: 0 1vw 0 1vw;
-}
-
-.beat {
-  display: block;
-}
-
-.beat p {
-  margin: 0;
-}
-
-.name {
-  margin: 2vw 0 0 0;
-}
-
-.name p {
-  width: 4vw;
-  margin: 0.5vw -0.2vw 1vw 0;
-}
-
-.part select {
-  width: 4vw;
-  height: 3vw;
-  margin: 0;
-}
-
-.sound {
-  background-color: #ffff00;
-}
-
 .rhythm_img {
   display: flex;
   margin: 24px 0 4vw 0;
   justify-content: space-around;
-  font-size: 4vw;
 }
 
 #tan,
@@ -83,11 +43,7 @@ select {
   height: 64px;
 }
 
-.rhythm_img p {
-  margin: 0;
-}
-
-.tempo_and_piano {
+.playSettings {
   display: flex;
   justify-content: space-around;
   width: 100vw;
@@ -126,61 +82,6 @@ button {
   background-color: #eedab9;
 }
 
-#play {
-  background-color: #ff7e00;
-  display: inline-block;
-  position: relative;
-  color: #000;
-  font-size: 2vw;
-}
-
-#play::before {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border: 0.8vw solid transparent;
-  border-left: 1.5vw solid currentColor;
-  box-sizing: border-box;
-  content: "";
-}
-
-#stop {
-  background-color: #ffa500;
-  display: inline-block;
-  position: relative;
-  color: #000;
-  font-size: 2vw;
-}
-
-#stop::before,
-#stop::after {
-  position: absolute;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 0.4vw;
-  height: 1.5vw;
-  box-sizing: border-box;
-  background-color: currentColor;
-  content: "";
-}
-
-#stop::before {
-  left: 3.5vw;
-}
-
-#stop::after {
-  left: 4.5vw;
-}
-
-.beat button{
-  width: 80px;
-  height: auto;
-  padding: 0;
-}
-
 .piano {
   display: flex;
   width: 100vw;
@@ -210,11 +111,6 @@ button {
   margin: 0 -1.4vw;
   z-index: 2;
 }
-
-#first{
-  margin-top: 4vw;
-}
-
 
 
 .abcjs-inline-midi {
