@@ -75,6 +75,11 @@ button {
   margin: 0.2vw 0.5vw 0 0;
 }
 
+.beat button{
+  width: 96px;
+  height: auto;
+}
+
 #play_mode {
   width: 10vw;
   height: 4vw;
