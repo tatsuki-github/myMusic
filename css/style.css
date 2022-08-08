@@ -16,6 +16,9 @@ p {
 select {
   color: #000;
   font-weight: bold;
+  width: 96px;
+  height: 48px;
+  margin: 0 8px 0 0;
 }
 
 .rhythm_img {
@@ -44,24 +47,17 @@ select {
 }
 
 .playSettings {
-  display: flex;
-  justify-content: space-around;
-  width: 100vw;
-  margin: 4vw 0 0 0;
+  margin: 4vw auto;
+  width: 48%;
 }
 
 #tempo_category {
-  display: flex;
-  width: 12vw;
-  height: 4vw;
-  margin: 3vw 0 0 0.5vw;
   background-color: #eee8aa;
 }
 
 .buttons {
   display: flex;
-  margin: 3vw 0 0 0;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 button {
@@ -72,7 +68,6 @@ button {
   color: black;
   font-weight: bold;
   font-size: 1.5vw;
-  margin: 0.2vw 0.5vw 0 0;
 }
 
 .beat button{
@@ -81,9 +76,6 @@ button {
 }
 
 #play_mode {
-  width: 10vw;
-  height: 4vw;
-  margin: 0.2vw 0.5vw 0 0;
   background-color: #eedab9;
 }
 
