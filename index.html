@@ -92,7 +92,7 @@
   <button id="oneBack">1つ戻る</button>
 </div>
 
-<div class="piano">
+<div class="piano" id="piano">
   <div class="key white" id="do"><p>ド</p></div>
   <div class="black"></div>
   <div class="key white" id="re"><p>レ</p></div>
@@ -112,12 +112,6 @@
   <div class="key white" id="mi_high"><p>ミ↑</p></div>
 </div>
 <script>
-
-//無音を用意
-document.querySelector('button').addEventListener('click', function() {
-  const silence = new Audio('audio/silence.mp3');
-  silence.play();
-});
 
 //ロード
 function load(){
@@ -459,6 +453,14 @@ document.getElementById("oneBack").addEventListener("click", function() {
     notesCount-=2;
     displayNote();
   }
+}, false);
+
+
+
+//無音を再生
+document.getElementById("piano").addEventListener("click", function() {
+  const silence = new Audio('audio/silence.mp3');
+  silence.play();
 }, false);
 
 //鍵盤音階再生
