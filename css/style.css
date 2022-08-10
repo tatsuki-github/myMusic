@@ -21,34 +21,26 @@ select {
   margin: 0 8px 0 0;
 }
 
-.rhythm_img {
-  display: flex;
-  margin: 24px 0 4vw 0;
-  justify-content: space-around;
-}
-
 .rhythmImg {
-  border: 0.2vw solid lightblue;
   width: 88px;
   height: 64px;
+  margin: 0 24px 0 0;
 }
 
-#tata,#u{
+#tata,#eighthRest{
   border: 0.2vw solid lightgreen;
-  width: 44px;
-  height: 64px;
+}
+
+#tan,#quarterRest{
+  border: 0.2vw solid lightblue;
 }
 
 #ta_n{
   border: 0.2vw solid yellow;
-  width: 110px;
-  height: 64px;
 }
 
 #ta__n{
   border: 0.2vw solid lightpink;
-  width: 176px;
-  height: 64px;
 }
 
 .playSettings {
@@ -62,6 +54,7 @@ select {
 
 .buttons {
   display: flex;
+  margin: 80px 0 0;
   justify-content: space-between;
 }
 
@@ -81,6 +74,10 @@ button {
 
 #play_mode {
   background-color: #eedab9;
+}
+
+#oneBack{
+  background-color: lightgray;
 }
 
 .piano {
