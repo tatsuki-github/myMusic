@@ -27,22 +27,27 @@ select {
   justify-content: space-around;
 }
 
-#tan,
-#tata,
-#un,
-#tau,
-#uta,
-#takka {
+.rhythmImg {
   border: 0.2vw solid lightblue;
-  width: 56px;
+  width: 88px;
   height: 64px;
 }
 
-#ta__n,
-#ta_nta,
-#tata_n {
+#tata,#u{
+  border: 0.2vw solid lightgreen;
+  width: 44px;
+  height: 64px;
+}
+
+#ta_n{
+  border: 0.2vw solid yellow;
+  width: 110px;
+  height: 64px;
+}
+
+#ta__n{
   border: 0.2vw solid lightpink;
-  width: 112px;
+  width: 176px;
   height: 64px;
 }
 

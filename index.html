@@ -24,39 +24,27 @@
 <body onload="load()">
 <div class="rhythm_img">
   <div>
-    <img src="img/tan.jpg" alt="" id="tan">
+    <img src="img/hatibuonpu.jpeg" alt="" class="rhythmImg" id="tata">
   </div>
 
   <div>
-    <img src="img/tata.jpg" alt="" id="tata">
+    <img src="img/shibuonnpu.jpeg" alt="" class="rhythmImg" id="tan">
+  </div>
+
+  <div>
+    <img src="img/huten-yonbuonpu.jpeg" alt=""  class="rhythmImg" id="ta_n">
+  </div>
+
+  <div>
+    <img src="img/nibunonpu.jpeg" alt="" id="ta__n">
   </div>
     
   <div>
-    <img src="img/un.jpg" alt="" id="un">
+    <img src="img/hachibukyufu.jpeg" alt="" class="rhythmImg" id="u">
   </div>
 
   <div>
-    <img src="img/tau.jpg" alt="" id="tau">
-  </div>
-
-  <div>
-    <img src="img/uta.jpg" alt="" id="uta">
-  </div>
-
-  <div>
-    <img src="img/takka.png" alt="" id="takka">
-  </div>
-
-  <div>
-    <img src="img/ta__n.jpg" alt="" id="ta__n">
-  </div>
-
-  <div>
-    <img src="img/ta_nta.jpg" alt="" id="ta_nta">
-  </div>
-    
-  <div>
-    <img src="img/tata_n.jpg" alt="" id="tata_n">
+    <img src="img/shibukyufu.jpeg" alt="" class="rhythmImg" id="un">
   </div>
 </div>
 
@@ -139,70 +127,16 @@ document.getElementById("tata").addEventListener("click", function() {
   Tone.Transport.start();
 }, false);
 
-document.getElementById("tau").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  const melodyList = [{note: "E4", duration: "8n"},null];
-
-function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time);
-}
-  const melody = new Tone.Sequence(setPlay, melodyList).start();
-  melody.loop = 0; 
-  Tone.Transport.start();
-}, false);
-
-document.getElementById("uta").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  const melodyList = [null,{note: "E4", duration: "8n"}];
-
-function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time);
-}
-  const melody = new Tone.Sequence(setPlay, melodyList).start();
-  melody.loop = 0; 
-  Tone.Transport.start();
-}, false);
-
-document.getElementById("takka").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  const melodyList = [{note: "E4", duration: "6n"},[null,{note: "E4", duration: "16n"}]];
-
-function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time);
-}
-  const melody = new Tone.Sequence(setPlay, melodyList).start();
-  melody.loop = 0; 
-  Tone.Transport.start();
-}, false);
-
 document.getElementById("ta__n").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
   synth.triggerAttackRelease("E4", "2n");
 }, false);
 
-document.getElementById("ta_nta").addEventListener("click", function() {
+document.getElementById("ta_n").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  const melodyList = [[{note: "E4", duration: "3n"}],null,[null,{note: "E4", duration: "8n"}]];
-
-function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time);
-}
-  const melody = new Tone.Sequence(setPlay, melodyList).start();
-  melody.loop = 0; 
-  Tone.Transport.start();
+  synth.triggerAttackRelease("E4", "3n");
 }, false);
 
-document.getElementById("tata_n").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  const melodyList = [[{note: "E4", duration: "8n"}],[{note: "E4", duration: "3n"}]];
-
-function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time);
-}
-  const melody = new Tone.Sequence(setPlay, melodyList).start();
-  melody.loop = 0; 
-  Tone.Transport.start();
-}, false);
 
 
 
