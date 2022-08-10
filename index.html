@@ -102,13 +102,7 @@ document.getElementById("tan").addEventListener("click", function() {
 
 document.getElementById("tata").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
-  const melodyList = [{note: "E4", duration: "8n"},{note: "E4", duration: "8n"}];
-  function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time);
-  }
-  const melody = new Tone.Sequence(setPlay, melodyList).start();
-  melody.loop = 0; 
-  Tone.Transport.start();
+  synth.triggerAttackRelease("E4", "8n");
 }, false);
 
 document.getElementById("ta__n").addEventListener("click", function() {
