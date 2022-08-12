@@ -65,15 +65,9 @@
     <img src="img/nibunonpu.jpeg" alt="" class="rhythmImg" id="ta__n">
   </label>
 
-  <label for="eighthRest">
-  <input id="hachibukyufu" type="radio" name="beat" value="eighthRest">
   <img src="img/hachibukyufu.jpeg" alt="" class="rhythmImg" id="eighthRest">
-  </label>
 
-  <label for="quarterRest">
-  <input id="shibukyufu" type="radio" name="beat" value="quarterRest">
   <img src="img/shibukyufu.jpeg" alt="" class="rhythmImg" id="quarterRest">
-  </label>
 
   <button id="oneBack">1つ戻る</button>
 </div>
@@ -113,8 +107,6 @@ function borderReset(){
   document.getElementById("tan").style.borderColor = "black";
   document.getElementById("ta_n").style.borderColor = "black";
   document.getElementById("ta__n").style.borderColor = "black";
-  document.getElementById("eighthRest").style.borderColor = "black";
-  document.getElementById("quarterRest").style.borderColor = "black";
 }
 
 //リズム再生
@@ -143,7 +135,7 @@ document.getElementById("ta_n").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
   synth.triggerAttackRelease("E4", "3n");
   borderReset();
-  document.getElementById("ta_n").style.borderColor = "yellow";
+  document.getElementById("ta_n").style.borderColor = "orange";
 }, false);
 
 
@@ -336,8 +328,6 @@ function soundAndDisplayNote(sound,display) {
 }
 
 document.getElementById("eighthRest").addEventListener("click", function() {
-  borderReset();
-  document.getElementById("eighthRest").style.borderColor = "lightgreen";
   if(notesCount >= 32){
         wrong.play();
       }
@@ -354,8 +344,6 @@ document.getElementById("eighthRest").addEventListener("click", function() {
 }, false);
 
 document.getElementById("quarterRest").addEventListener("click", function() {
-  borderReset();
-  document.getElementById("quarterRest").style.borderColor = "lightblue";
   if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31 || notesCount >= 32){
         wrong.play();
       }
