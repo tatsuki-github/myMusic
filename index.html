@@ -45,21 +45,35 @@
 <div id="paper"></div>
 
 <div class="beat">
-  <input id="eighthNote" type="radio" name="beat" value="eighthNote">
-  <img src="img/hatibuonpu.jpeg" alt="" class="rhythmImg" id="tata">
+  <label for="eighthNote">
+    <input id="eighthNote" type="radio" name="beat" value="eighthNote">
+    <img src="img/hatibuonpu.jpeg" alt="" class="rhythmImg" id="tata">
+  </label>
 
-  <input id="quarterNote" type="radio" name="beat" value="quarterNote" checked>
-  <img src="img/shibuonnpu.jpeg" alt="" class="rhythmImg" id="tan">
+  <label for="quarterNote">
+    <input id="quarterNote" type="radio" name="beat" value="quarterNote" checked>
+    <img src="img/shibuonnpu.jpeg" alt="" class="rhythmImg" id="tan">
+  </label>
 
-  <input id="dottedQuarterNote" type="radio" name="beat" value="dottedQuarterNote">
-  <img src="img/huten-yonbuonpu.jpeg" alt="" class="rhythmImg" id="ta_n">
+  <label for="dottedQuarterNote">
+    <input id="dottedQuarterNote" type="radio" name="beat" value="dottedQuarterNote">
+    <img src="img/huten-yonbuonpu.jpeg" alt="" class="rhythmImg" id="ta_n">
+  </label>
 
-  <input id="halfNote" type="radio" name="beat" value="halfNote">
-  <img src="img/nibunonpu.jpeg" alt="" class="rhythmImg" id="ta__n">
+  <label for="halfNote">
+    <input id="halfNote" type="radio" name="beat" value="halfNote">
+    <img src="img/nibunonpu.jpeg" alt="" class="rhythmImg" id="ta__n">
+  </label>
 
+  <label for="eighthRest">
+  <input id="hachibukyufu" type="radio" name="beat" value="eighthRest">
   <img src="img/hachibukyufu.jpeg" alt="" class="rhythmImg" id="eighthRest">
+  </label>
 
+  <label for="quarterRest">
+  <input id="shibukyufu" type="radio" name="beat" value="quarterRest">
   <img src="img/shibukyufu.jpeg" alt="" class="rhythmImg" id="quarterRest">
+  </label>
 
   <button id="oneBack">1つ戻る</button>
 </div>
@@ -94,25 +108,42 @@ function load(){
   ABCJS.renderAbc("paper","M:4/4\nL:1/8\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|"  ,{responsive: "resize",paddingtop:"0",paddingbottom:"8"});
 }
 
+function borderReset(){
+  document.getElementById("tata").style.borderColor = "black";
+  document.getElementById("tan").style.borderColor = "black";
+  document.getElementById("ta_n").style.borderColor = "black";
+  document.getElementById("ta__n").style.borderColor = "black";
+  document.getElementById("eighthRest").style.borderColor = "black";
+  document.getElementById("quarterRest").style.borderColor = "black";
+}
+
 //リズム再生
 document.getElementById("tan").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
   synth.triggerAttackRelease("E4", "4n");
+  borderReset();
+  document.getElementById("tan").style.borderColor = "lightblue";
 }, false);
 
 document.getElementById("tata").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
   synth.triggerAttackRelease("E4", "8n");
+  borderReset();
+  document.getElementById("tata").style.borderColor = "lightgreen";
 }, false);
 
 document.getElementById("ta__n").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
   synth.triggerAttackRelease("E4", "2n");
+  borderReset();
+  document.getElementById("ta__n").style.borderColor = "lightpink";
 }, false);
 
 document.getElementById("ta_n").addEventListener("click", function() {
   const synth = new Tone.Synth().toDestination();
   synth.triggerAttackRelease("E4", "3n");
+  borderReset();
+  document.getElementById("ta_n").style.borderColor = "yellow";
 }, false);
 
 
@@ -305,6 +336,8 @@ function soundAndDisplayNote(sound,display) {
 }
 
 document.getElementById("eighthRest").addEventListener("click", function() {
+  borderReset();
+  document.getElementById("eighthRest").style.borderColor = "lightgreen";
   if(notesCount >= 32){
         wrong.play();
       }
@@ -321,6 +354,8 @@ document.getElementById("eighthRest").addEventListener("click", function() {
 }, false);
 
 document.getElementById("quarterRest").addEventListener("click", function() {
+  borderReset();
+  document.getElementById("quarterRest").style.borderColor = "lightblue";
   if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31 || notesCount >= 32){
         wrong.play();
       }

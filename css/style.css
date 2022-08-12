@@ -27,20 +27,8 @@ select {
   margin: 0 24px 0 0;
 }
 
-#tata,#eighthRest{
-  border: 0.2vw solid lightgreen;
-}
-
-#tan,#quarterRest{
-  border: 0.2vw solid lightblue;
-}
-
-#ta_n{
-  border: 0.2vw solid yellow;
-}
-
-#ta__n{
-  border: 0.2vw solid lightpink;
+#tata,#eighthRest,#tan,#quarterRest,#ta_n,#ta__n{
+  border: 4px solid black;
 }
 
 .playSettings {
@@ -70,6 +58,10 @@ button {
 .beat button{
   width: 96px;
   height: auto;
+}
+
+.beat input{
+  display: none;
 }
 
 #play_mode {
