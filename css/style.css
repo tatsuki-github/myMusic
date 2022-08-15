@@ -257,3 +257,21 @@ button {
   box-sizing: border-box;
 }
 
+.abcjs-download-midi{
+  width: 160px;
+  height: 24px;
+  border-radius: 64px;
+  background-color: gainsboro;
+  font-size:0;
+  margin: 8px auto 0;
+}
+.abcjs-download-midi a{
+  text-decoration: none;
+  color: black;
+}
+.abcjs-download-midi a:before {
+  font-size: 14px;
+  content: "旋律をダウンロード";
+}
+
+
