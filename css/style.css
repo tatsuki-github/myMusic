@@ -35,6 +35,10 @@ select {
   border-radius: 32px;
 }
 
+#oneBack{
+  font-size: 32px;
+}
+
 #eighthRest{
   margin: 0 16px 0 96px;
 }
