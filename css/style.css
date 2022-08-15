@@ -268,6 +268,7 @@ button {
 .abcjs-download-midi a{
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 .abcjs-download-midi a:before {
   font-size: 14px;
