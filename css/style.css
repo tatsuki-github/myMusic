@@ -261,6 +261,10 @@ button {
   box-sizing: border-box;
 }
 
+#audio{
+  display: flex;
+}
+
 .abcjs-download-midi{
   width: 160px;
   height: 24px;
