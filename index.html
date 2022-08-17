@@ -31,9 +31,9 @@
       <option value="tempo_160">&#9833; = 160</option>
     </select>
     <select name="play_mode" id="play_mode">
-      <option value="play" selected>再生</option>
-      <option value="only_chord">コードのみ</option>
+      <option value="play" selected>旋律・コード</option>
       <option value="only_melody">旋律のみ</option>
+      <option value="only_chord">コードのみ</option>
     </select>
     <div id="audio" style="width:400px;"></div>  
   </div>
@@ -96,7 +96,7 @@ function load(){
     notes[i] = " ";
   }
   changeTempo();
-  ABCJS.renderAbc("paper","M:4/4\nL:1/8\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|" + '\n' +`"C"` +  `${notes[32]}` + notes[33] + notes[34] + notes[35] + notes[36] + notes[37] + notes[38] + notes[39] + "|" + `"Am"` + `${notes[40]}` + notes[41] + notes[42] + notes[43] + notes[44] + notes[45] + notes[46] + notes[47] + "|" + `"Dm"` + `${notes[48]}` + notes[49] + notes[50] + notes[51] + `"G7"` + notes[52] + notes[53] + notes[54] + notes[55] + "|" + `"C"` + `${notes[56]}` + notes[57] + notes[58] + notes[59] + notes[60] + notes[61] + notes[62] + notes[63] + "||",{add_classes: true,responsive: "resize",paddingtop:"0",paddingbottom:"8"});
+  ABCJS.renderAbc("paper","M:4/4\nL:1/8\nK:C\n " + `"C"` + notes[0] + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + notes[8] + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + notes[16] + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + notes[24] + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|" + '\n' +`"C"` + notes[32] + notes[33] + notes[34] + notes[35] + notes[36] + notes[37] + notes[38] + notes[39] + "|" + `"Am"` + notes[40] + notes[41] + notes[42] + notes[43] + notes[44] + notes[45] + notes[46] + notes[47] + "|" + `"Dm"` + notes[48] + notes[49] + notes[50] + notes[51] + `"G7"` + notes[52] + notes[53] + notes[54] + notes[55] + "|" + `"C"` + notes[56] + notes[57] + notes[58] + notes[59] + notes[60] + notes[61] + notes[62] + notes[63] + "||",{add_classes: true,responsive: "resize",paddingtop:"18",paddingbottom:"8"});
 }
 
 function borderReset(){
@@ -106,42 +106,39 @@ function borderReset(){
   document.getElementById("ta__n").style.borderColor = "black";
 }
 
-//リズム再生
-document.getElementById("tan").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  synth.triggerAttackRelease("E4", "4n");
-  borderReset();
-  document.getElementById("tan").style.borderColor = "lightblue";
-}, false);
-
-document.getElementById("tata").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  synth.triggerAttackRelease("E4", "8n");
-  borderReset();
-  document.getElementById("tata").style.borderColor = "lightgreen";
-}, false);
-
-document.getElementById("ta__n").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  synth.triggerAttackRelease("E4", "2n");
-  borderReset();
-  document.getElementById("ta__n").style.borderColor = "lightpink";
-}, false);
-
-document.getElementById("ta_n").addEventListener("click", function() {
-  const synth = new Tone.Synth().toDestination();
-  synth.triggerAttackRelease("E4", "3n");
-  borderReset();
-  document.getElementById("ta_n").style.borderColor = "orange";
-}, false);
-
-
-
 
 //全体で使う変数や設定など
     const tempo_category = document.getElementById("tempo_category");
     const play_mode = document.getElementById("play_mode");
     const notes = new Array(64); 
+    const kachi = new Audio('audio/kachi.mp3');
+
+
+
+//リズム再生
+document.getElementById("tan").addEventListener("click", function() {
+  kachi.play();
+  borderReset();
+  document.getElementById("tan").style.borderColor = "lightblue";
+}, false);
+
+document.getElementById("tata").addEventListener("click", function() {
+  kachi.play();
+  borderReset();
+  document.getElementById("tata").style.borderColor = "lightgreen";
+}, false);
+
+document.getElementById("ta__n").addEventListener("click", function() {
+  kachi.play();
+  borderReset();
+  document.getElementById("ta__n").style.borderColor = "lightpink";
+}, false);
+
+document.getElementById("ta_n").addEventListener("click", function() {
+  kachi.play();
+  borderReset();
+  document.getElementById("ta_n").style.borderColor = "orange";
+}, false);
 
 function melodyAndChordRenderMidi(bpm) {
   ABCJS.renderMidi( "audio","M:4/4\nL:1/8\nK:C\nV:1\n" + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|" + `"C"` + '\n' + `${notes[32]}` + notes[33] + notes[34] + notes[35] + notes[36] + notes[37] + notes[38] + notes[39] + "|" + `"Am"` + `${notes[40]}` + notes[41] + notes[42] + notes[43] + notes[44] + notes[45] + notes[46] + notes[47] + "|" + `"Dm"` + `${notes[48]}` + notes[49] + notes[50] + notes[51] + notes[52] + notes[53] + notes[54] + notes[55] + "|" + `"C"` + `${notes[56]}` + notes[57] + notes[58] + notes[59] + notes[60] + notes[61] + notes[62] + notes[63] + "||" +
@@ -167,12 +164,12 @@ function changeTempo(){
     switch (play_mode.value){
       case "play":
         melodyAndChordRenderMidi(60);
-          break;  
-      case "only_chord":
-        chordRenderMidi(60);
-          break;
+          break; 
       case "only_melody":
         melodyRenderMidi(60);
+          break; 
+      case "only_chord":
+        chordRenderMidi(60);
           break;
       default: 
     }    
@@ -181,12 +178,12 @@ function changeTempo(){
     switch (play_mode.value){
       case "play":
       melodyAndChordRenderMidi(80);
-          break;  
-      case "only_chord":
-      chordRenderMidi(80);
-          break;
+          break; 
       case "only_melody":
       melodyRenderMidi(80);
+          break; 
+      case "only_chord":
+      chordRenderMidi(80);
           break;
       default: 
     }    
@@ -196,11 +193,11 @@ function changeTempo(){
       case "play":
       melodyAndChordRenderMidi(100);
           break;  
-      case "only_chord":
-      chordRenderMidi(100);
-          break;
       case "only_melody":
       melodyRenderMidi(100);
+          break;
+      case "only_chord":
+      chordRenderMidi(100);
           break;
       default: 
     }  
@@ -209,12 +206,12 @@ function changeTempo(){
     switch (play_mode.value){
       case "play":
       melodyAndChordRenderMidi(120);
-          break;  
-      case "only_chord":
-      chordRenderMidi(120);
-          break;
+      break;  
       case "only_melody":
       melodyRenderMidi(120);
+          break;
+      case "only_chord":
+      chordRenderMidi(120);
           break;
       default: 
     }    
@@ -223,12 +220,12 @@ function changeTempo(){
     switch (play_mode.value){
       case "play":
       melodyAndChordRenderMidi(140);
-          break;  
-      case "only_chord":
-      chordRenderMidi(140);
-          break;
+      break;  
       case "only_melody":
       melodyRenderMidi(140);
+          break;
+      case "only_chord":
+      chordRenderMidi(140);
           break;
       default: 
     }    
@@ -237,12 +234,12 @@ function changeTempo(){
     switch (play_mode.value){
       case "play":
       melodyAndChordRenderMidi(160);
-          break;  
-      case "only_chord":
-      chordRenderMidi(160);
-          break;
+      break;  
       case "only_melody":
       melodyRenderMidi(160);
+          break;
+      case "only_chord":
+      chordRenderMidi(160);
           break;
       default: 
     }       
@@ -254,7 +251,7 @@ function changeTempo(){
 //楽譜表示
 function displayNote(){
   changeTempo();
-  ABCJS.renderAbc("paper","M:4/4\nL:1/8\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|" + '\n' +`"C"` +  `${notes[32]}` + notes[33] + notes[34] + notes[35] + notes[36] + notes[37] + notes[38] + notes[39] + "|" + `"Am"` + `${notes[40]}` + notes[41] + notes[42] + notes[43] + notes[44] + notes[45] + notes[46] + notes[47] + "|" + `"Dm"` + `${notes[48]}` + notes[49] + notes[50] + notes[51] + `"G7"` + notes[52] + notes[53] + notes[54] + notes[55] + "|" + `"C"` + `${notes[56]}` + notes[57] + notes[58] + notes[59] + notes[60] + notes[61] + notes[62] + notes[63] + "||",{add_classes: true,responsive: "resize",paddingtop:"0",paddingbottom:"8"});
+  ABCJS.renderAbc("paper","M:4/4\nL:1/8\nK:C\n " + `"C"` + notes[0] + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + notes[8] + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + notes[16] + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + notes[24] + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|" + '\n' +`"C"` +  notes[32] + notes[33] + notes[34] + notes[35] + notes[36] + notes[37] + notes[38] + notes[39] + "|" + `"Am"` + notes[40] + notes[41] + notes[42] + notes[43] + notes[44] + notes[45] + notes[46] + notes[47] + "|" + `"Dm"` + notes[48] + notes[49] + notes[50] + notes[51] + `"G7"` + notes[52] + notes[53] + notes[54] + notes[55] + "|" + `"C"` + notes[56] + notes[57] + notes[58] + notes[59] + notes[60] + notes[61] + notes[62] + notes[63] + "||",{add_classes: true,responsive: "resize",paddingtop:"0",paddingbottom:"8"});
 }  
 
 //楽譜表示切り替え
