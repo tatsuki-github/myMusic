@@ -108,6 +108,7 @@ button {
   height: 20vw;
   margin: 8px 0 0;
   border: 8px solid black;
+  border-bottom: 0;
   border-radius: 4px;
   box-shadow: 2px 2px 4px gray;
 }
@@ -117,6 +118,8 @@ button {
   width: 424vw;
   background-color: white;
   border: 1px solid gray;
+  border-top: none;
+  box-shadow: 2px 2px 4px gray;
 }
 
 .white p {
@@ -126,6 +129,12 @@ button {
   left: 1vw;
 }
 
+.white:active{
+  box-shadow: none;
+  background-color: #F5F5F5;
+  transform: translate3d(0, 4px, 0);
+}
+
 .black {
   width: 120vw;
   height: 8vw;
@@ -133,6 +142,7 @@ button {
   margin: 0 -1.4vw;
   z-index: 2;
 }
+
 
 
 .abcjs-inline-midi {
