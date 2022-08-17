@@ -271,8 +271,6 @@ let halfNote = document.getElementById("halfNote");
 
 let notesCount = 0;
 
-const wrong = new Audio('audio/wrong.mp3');
-
 function soundAndDisplayNote(sound,display) {
   if(eighthNote.checked){
       if(notesCount >= 64){
@@ -384,13 +382,6 @@ document.getElementById("oneBack").addEventListener("click", function() {
   }
 }, false);
 
-
-
-//無音を再生
-document.getElementById("piano").addEventListener("click", function() {
-  const silence = new Audio('audio/silence.mp3');
-  silence.play();
-}, false);
 
 //鍵盤音階再生
 document.getElementById("do").addEventListener("click", function() {
