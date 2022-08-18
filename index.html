@@ -110,7 +110,7 @@ function borderReset(){
 //全体で使う変数や設定など
     const tempo_category = document.getElementById("tempo_category");
     const play_mode = document.getElementById("play_mode");
-    const notes = new Array(64); 
+    const notes = new Array(); 
     const kachi = new Audio('audio/kachi.mp3');
 
 
@@ -386,56 +386,49 @@ document.getElementById("oneBack").addEventListener("click", function() {
   }
 }, false);
 
+document.getElementById("piano").addEventListener("click", function() {
+    displayNote();
+}, false);
 
 //鍵盤音階再生
 document.getElementById("do").addEventListener("click", function() {
     soundAndDisplayNote("C4","C");
-    displayNote();
 }, false);
 
   document.getElementById("re").addEventListener("click", function() {
     soundAndDisplayNote("D4","D");
-    displayNote();
 }, false);
 
   document.getElementById("mi").addEventListener("click", function() {
     soundAndDisplayNote("E4","E");
-    displayNote();
 }, false);
 
   document.getElementById("fa").addEventListener("click", function() {
     soundAndDisplayNote("F4","F");
-    displayNote();
 }, false);
 
   document.getElementById("so").addEventListener("click", function() {
     soundAndDisplayNote("G4","G");
-    displayNote();
 }, false);
 
   document.getElementById("ra").addEventListener("click", function() {
     soundAndDisplayNote("A4","A");
-    displayNote();
 }, false);
 
   document.getElementById("shi").addEventListener("click", function() {
     soundAndDisplayNote("B4","B");
-    displayNote();
 }, false);
 
   document.getElementById("do_high").addEventListener("click", function() {
     soundAndDisplayNote("C5","c");
-    displayNote();
 }, false);
 
   document.getElementById("re_high").addEventListener("click", function() {
     soundAndDisplayNote("D5","d");
-    displayNote();
 }, false);
 
   document.getElementById("mi_high").addEventListener("click", function() {
     soundAndDisplayNote("E5","e");
-    displayNote();
 }, false);
 </script>
 </body>
