@@ -292,7 +292,7 @@ function soundAndDisplayNote(sound,display) {
       }
     }
     else if(quarterNote.checked){
-      if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31 || notesCount == 39 || notesCount == 47 || notesCount == 55 || notesCount == 63 ||notesCount >= 64){
+      if(notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
       }
       else{
@@ -302,7 +302,7 @@ function soundAndDisplayNote(sound,display) {
       }
     }
     else if(dottedQuarterNote.checked){
-      if(notesCount == 6 || notesCount == 7 || notesCount == 14 || notesCount == 15 || notesCount == 22 || notesCount == 23 || notesCount == 30 || notesCount == 31 || notesCount == 38 || notesCount == 39 || notesCount == 46 || notesCount == 47 || notesCount == 54 || notesCount == 55 || notesCount == 62 || notesCount == 63 || notesCount >= 64){
+      if(notesCount%8 == 6 ||notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
       }
       else{
@@ -312,7 +312,7 @@ function soundAndDisplayNote(sound,display) {
       }
     }
     else if(halfNote.checked){
-      if(notesCount == 5 || notesCount == 6 || notesCount == 7 || notesCount == 13 || notesCount == 14 || notesCount == 15 || notesCount == 21 || notesCount == 22 || notesCount == 23 || notesCount == 29 || notesCount == 30 || notesCount == 31 || notesCount == 37 || notesCount == 38 || notesCount == 39 || notesCount == 45 || notesCount == 46 || notesCount == 47 || notesCount == 53 || notesCount == 54 || notesCount == 55 || notesCount == 61 || notesCount == 62 || notesCount == 63 || notesCount >= 64){
+      if(notesCount%8 == 5 || notesCount%8 == 6 || notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
       }
       else{
@@ -340,7 +340,7 @@ document.getElementById("eighthRest").addEventListener("click", function() {
 }, false);
 
 document.getElementById("quarterRest").addEventListener("click", function() {
-  if(notesCount == 7 || notesCount == 15 || notesCount == 23 || notesCount == 31 || notesCount == 39 || notesCount == 47 || notesCount == 55 || notesCount == 63 || notesCount >= 64){
+  if(notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
       }
       else{
