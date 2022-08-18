@@ -140,6 +140,8 @@ document.getElementById("ta_n").addEventListener("click", function() {
   document.getElementById("ta_n").style.borderColor = "orange";
 }, false);
 
+
+
 function melodyAndChordRenderMidi(bpm) {
   ABCJS.renderMidi( "audio","M:4/4\nL:1/8\nK:C\nV:1\n" + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + notes[4] + notes[5] + notes[6]+ notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + notes[12] + notes[13] + notes[14]+ notes[15] + "|" + `"G"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + notes[20] + notes[21] + notes[22]+ notes[23] + "|" + `"C"` + `${notes[24]}` + notes[25] + notes[26] + notes[27] + notes[28] + notes[29] + notes[30]+ notes[31] + "|" + `"C"` + '\n' + `${notes[32]}` + notes[33] + notes[34] + notes[35] + notes[36] + notes[37] + notes[38] + notes[39] + "|" + `"Am"` + `${notes[40]}` + notes[41] + notes[42] + notes[43] + notes[44] + notes[45] + notes[46] + notes[47] + "|" + `"Dm"` + `${notes[48]}` + notes[49] + notes[50] + notes[51] + notes[52] + notes[53] + notes[54] + notes[55] + "|" + `"C"` + `${notes[56]}` + notes[57] + notes[58] + notes[59] + notes[60] + notes[61] + notes[62] + notes[63] + "||" +
         "\nV:2\n" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" + `"F"[F4A4c4f4]"F"[F4A4c4f4]` + "|" + `"G"[G4B4D4d4]"G"[G4B4D4d4]` +  "|" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "|" + `"Am"[C4E4A4a4]"Am"[C4E4A4a4]` + "|" + `"Dm"[D4F4A4d4]"G7"[D4F4G4B4c4]` +  "|" + `"C"[C4E4G4c4]"C"[C4E4G4c4]` + "||",{generateDownload: true,qpm:bpm,chordsOff:true});
