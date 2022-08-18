@@ -114,7 +114,6 @@ function borderReset(){
     const kachi = new Audio('audio/kachi.mp3');
 
 
-
 //リズム再生
 document.getElementById("tan").addEventListener("click", function() {
   kachi.play();
@@ -139,7 +138,6 @@ document.getElementById("ta_n").addEventListener("click", function() {
   borderReset();
   document.getElementById("ta_n").style.borderColor = "orange";
 }, false);
-
 
 
 function melodyAndChordRenderMidi(bpm) {
@@ -389,6 +387,7 @@ document.getElementById("oneBack").addEventListener("click", function() {
 document.getElementById("piano").addEventListener("click", function() {
     displayNote();
 }, false);
+
 
 //鍵盤音階再生
 document.getElementById("do").addEventListener("click", function() {
