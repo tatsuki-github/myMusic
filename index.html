@@ -348,26 +348,31 @@ document.getElementById("quarterRest").addEventListener("click", function() {
       }
 }, false);
 
+const eighthNoteArray = ["C","D","E","F","G","A","B","c","d","e","C ","D ","E ","F ","G ","A ","B ","c ","d ","e "];
+const quarterNoteArray = ["C2","D2","E2","F2","G2","A2","B2","c2","d2","e2"];
+const dottedQuarterNoteArray = ["C3","D3","E3","F3","G3","A3","B3","c3","d3","e3"];
+const halfNoteArray = ["C4","D4","E4","F4","G4","A4","B4","c4","d4","e4"];
+
 document.getElementById("oneBack").addEventListener("click", function() {
   if(notesCount == 0){
     wrong.play();
   }
-  else if(notes[notesCount-1] == "C" || notes[notesCount-1] == "D" || notes[notesCount-1] == "E" || notes[notesCount-1] == "F" || notes[notesCount-1] == "G" || notes[notesCount-1] == "A" || notes[notesCount-1] == "B" || notes[notesCount-1] == "c" || notes[notesCount-1] == "d" || notes[notesCount-1] == "e" || notes[notesCount-1] == "C " || notes[notesCount-1] == "D " || notes[notesCount-1] == "E " || notes[notesCount-1] == "F " || notes[notesCount-1] == "G " || notes[notesCount-1] == "A " || notes[notesCount-1] == "B " || notes[notesCount-1] == "c " || notes[notesCount-1] == "d " || notes[notesCount-1] == "e "){
+  else if(eighthNoteArray.includes(notes[notesCount-1])){
     notes[notesCount-1] = "";
     notesCount--;
     displayNote();
   }
-  else if(notes[notesCount-2] == "C2" || notes[notesCount-2] == "D2" || notes[notesCount-2] == "E2" || notes[notesCount-2] == "F2" || notes[notesCount-2] == "G2" || notes[notesCount-2] == "A2" || notes[notesCount-2] == "B2" || notes[notesCount-2] == "c2" || notes[notesCount-2] == "d2" || notes[notesCount-2] == "e2" ){
+  else if(quarterNoteArray.includes(notes[notesCount-2])){
     notes[notesCount-2] = "";
     notesCount-=2;
     displayNote();
   }
-  else if(notes[notesCount-3] == "C3" || notes[notesCount-3] == "D3" || notes[notesCount-3] == "E3" || notes[notesCount-3] == "F3" || notes[notesCount-3] == "G3" || notes[notesCount-3] == "A3" || notes[notesCount-3] == "B3" || notes[notesCount-3] == "c3" || notes[notesCount-3] == "d3" || notes[notesCount-3] == "e3" ){
+  else if(dottedQuarterNoteArray.includes(notes[notesCount-3])){
     notes[notesCount-3] = "";
     notesCount-=3;
     displayNote();
   }
-  else if(notes[notesCount-4] == "C4" || notes[notesCount-4] == "D4" || notes[notesCount-4] == "E4" || notes[notesCount-4] == "F4" || notes[notesCount-4] == "G4" || notes[notesCount-4] == "A4" || notes[notesCount-4] == "B4" || notes[notesCount-4] == "c4" || notes[notesCount-4] == "d4" || notes[notesCount-4] == "e4" ){
+  else if(halfNoteArray.includes(notes[notesCount-4])){
     notes[notesCount-4] = "";
     notesCount-=4;
     displayNote();
