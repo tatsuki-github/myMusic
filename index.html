@@ -67,6 +67,18 @@
   <img src="img/shibukyufu.jpeg" alt="" class="rhythmImg" id="quarterRest" ontouchstart="">
 
   <button id="oneBack" ontouchstart=""><i class="fa-solid fa-rotate-left"></i></button>
+
+  <select name="measureEdit" id="measureEdit">
+    <option value="measureEdit">編集モード</option>
+    <option value="measure1">1小節目を編集</option>
+    <option value="measure2">2小節目を編集</option>
+    <option value="measure3">3小節目を編集</option>
+    <option value="measure4">4小節目を編集</option>
+    <option value="measure5">5小節目を編集</option>
+    <option value="measure6">6小節目を編集</option>
+    <option value="measure7">7小節目を編集</option>
+    <option value="measure8">8小節目を編集</option>
+  </select>
 </div>
 
 <div class="piano" id="piano">
@@ -110,8 +122,10 @@ function borderReset(){
 //全体で使う変数や設定など
     const tempo_category = document.getElementById("tempo_category");
     const play_mode = document.getElementById("play_mode");
+    const measure_edit = document.getElementById("measureEdit");
     const notes = new Array(); 
     const kachi = new Audio('audio/kachi.mp3');
+    let notesCount = 0;
 
 
 //リズム再生
@@ -269,7 +283,113 @@ let quarterNote = document.getElementById("quarterNote");
 let dottedQuarterNote = document.getElementById("dottedQuarterNote");
 let halfNote = document.getElementById("halfNote");
 
-let notesCount = 0;
+measure_edit.onchange = measureEdit;
+
+measure_edit.style.display = "none";
+
+
+function measureEdit(){
+  switch (measure_edit.value){
+  case "measure1":
+    notesCount = 0;
+    notes[0] = "";
+    notes[1] = "";
+    notes[2] = "";
+    notes[3] = "";
+    notes[4] = "";
+    notes[5] = "";
+    notes[6] = "";
+    notes[7] = "";
+    displayNote();
+  break;
+  case "measure2": 
+    notesCount = 8;
+    notes[8] = "";
+    notes[9] = "";
+    notes[10] = "";
+    notes[11] = "";
+    notes[12] = "";
+    notes[13] = "";
+    notes[14] = "";
+    notes[15] = "";
+    displayNote();
+  break;
+  case "measure3":
+    notesCount = 16;
+    notes[16] = "";
+    notes[17] = "";
+    notes[18] = "";
+    notes[19] = "";
+    notes[20] = "";
+    notes[21] = "";
+    notes[22] = "";
+    notes[23] = "";
+    displayNote();
+  break;
+  case "measure4": 
+    notesCount = 24;
+    notes[24] = "";
+    notes[25] = "";
+    notes[26] = "";
+    notes[27] = "";
+    notes[28] = "";
+    notes[29] = "";
+    notes[30] = "";
+    notes[31] = "";
+    displayNote();
+  break;
+  case "measure5":
+    notesCount = 32;
+    notes[32] = "";
+    notes[33] = "";
+    notes[34] = "";
+    notes[35] = "";
+    notes[36] = "";
+    notes[37] = "";
+    notes[38] = "";
+    notes[39] = "";
+    displayNote();
+  break;
+  case "measure6":
+    notesCount = 40;
+    notes[40] = "";
+    notes[41] = "";
+    notes[42] = "";
+    notes[43] = "";
+    notes[44] = "";
+    notes[45] = "";
+    notes[46] = "";
+    notes[47] = "";
+    displayNote(); 
+  break;
+  case "measure7":
+    notesCount = 48;
+    notes[48] = "";
+    notes[49] = "";
+    notes[50] = "";
+    notes[51] = "";
+    notes[52] = "";
+    notes[53] = "";
+    notes[54] = "";
+    notes[55] = "";
+    displayNote();
+  break;
+  case "measure8": 
+    notesCount = 56;
+    notes[56] = "";
+    notes[57] = "";
+    notes[58] = "";
+    notes[59] = "";
+    notes[60] = "";
+    notes[61] = "";
+    notes[62] = "";
+    notes[63] = "";
+    displayNote();
+  break;
+  default:
+  }
+}
+
 
 const wrong = new Audio('audio/wrong.mp3');
 
@@ -277,6 +397,121 @@ function soundAndDisplayNote(sound,display) {
   if(eighthNote.checked){
       if(notesCount >= 64){
         wrong.play();
+        measure_edit.style.display = "block";
+      }
+      else if(measure_edit.value != "measureEdit"){
+        if(measure_edit.value == "measure1"){
+          if(notesCount == 0 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
+        if(measure_edit.value == "measure2"){
+          if(notesCount == 8 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
+        if(measure_edit.value == "measure3"){
+          if(notesCount == 16 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
+        if(measure_edit.value == "measure4"){
+          if(notesCount == 24 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
+        if(measure_edit.value == "measure5"){
+          if(notesCount == 32 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
+        if(measure_edit.value == "measure6"){
+          if(notesCount == 40 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
+        if(measure_edit.value == "measure7"){
+          if(notesCount == 48 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
+        if(measure_edit.value == "measure8"){
+          if(notesCount == 56 || notesCount%8 != 0){
+            if(notesCount%2 == 0){
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display;
+              notesCount++;
+            }
+            else{
+              playSingleNote(sound,"8n");
+              notes[notesCount] = display + " ";
+              notesCount++;
+            }
+          }
+        }
       }
       else if(notesCount%2 == 0){
         playSingleNote(sound,"8n");
@@ -289,9 +524,69 @@ function soundAndDisplayNote(sound,display) {
         notesCount++;
       }
     }
+
     else if(quarterNote.checked){
       if(notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
+        measure_edit.style.display = "block";
+      }
+      else if(measure_edit.value != "measureEdit"){
+        if(measure_edit.value == "measure1"){
+          if(notesCount == 0 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
+        if(measure_edit.value == "measure2"){
+          if(notesCount == 8 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
+        if(measure_edit.value == "measure3"){
+          if(notesCount == 16 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
+        if(measure_edit.value == "measure4"){
+          if(notesCount == 24 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
+        if(measure_edit.value == "measure5"){
+          if(notesCount == 32 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
+        if(measure_edit.value == "measure6"){
+          if(notesCount == 40 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
+        if(measure_edit.value == "measure7"){
+          if(notesCount == 48 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
+        if(measure_edit.value == "measure8"){
+          if(notesCount == 56 || notesCount%8 != 0){
+          playSingleNote(sound,"4n");
+          notes[notesCount] = display + "2";
+          notesCount+=2;
+          }
+        }
       }
       else{
         playSingleNote(sound,"4n");
@@ -302,7 +597,68 @@ function soundAndDisplayNote(sound,display) {
     else if(dottedQuarterNote.checked){
       if(notesCount%8 == 6 ||notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
+        measure_edit.style.display = "block";
       }
+
+      else if(measure_edit.value != "measureEdit"){
+        if(measure_edit.value == "measure1"){
+          if(notesCount == 0 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+        if(measure_edit.value == "measure2"){
+          if(notesCount == 8 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+        if(measure_edit.value == "measure3"){
+          if(notesCount == 16 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+        if(measure_edit.value == "measure4"){
+          if(notesCount == 24 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+        if(measure_edit.value == "measure5"){
+          if(notesCount == 32 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+        if(measure_edit.value == "measure6"){
+          if(notesCount == 40 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+        if(measure_edit.value == "measure7"){
+          if(notesCount == 48 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+        if(measure_edit.value == "measure8"){
+          if(notesCount == 56 || notesCount%8 != 0){
+            playSingleNote(sound,"3n");
+            notes[notesCount] = display + "3";
+            notesCount+=3;
+          }
+        }
+      }
+      
       else{
         playSingleNote(sound,"3n");
         notes[notesCount] = display + "3";
@@ -312,6 +668,65 @@ function soundAndDisplayNote(sound,display) {
     else if(halfNote.checked){
       if(notesCount%8 == 5 || notesCount%8 == 6 || notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
+        measure_edit.style.display = "block";
+      }
+      else if(measure_edit.value != "measureEdit"){
+        if(measure_edit.value == "measure1"){
+          if(notesCount == 0 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
+        if(measure_edit.value == "measure2"){
+          if(notesCount == 8 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
+        if(measure_edit.value == "measure3"){
+          if(notesCount == 16 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
+        if(measure_edit.value == "measure4"){
+          if(notesCount == 24 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
+        if(measure_edit.value == "measure5"){
+          if(notesCount == 32 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
+        if(measure_edit.value == "measure6"){
+          if(notesCount == 40 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
+        if(measure_edit.value == "measure7"){
+          if(notesCount == 48 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
+        if(measure_edit.value == "measure8"){
+          if(notesCount == 56 || notesCount%8 != 0){
+            playSingleNote(sound,"2n");
+            notes[notesCount] = display + "4";
+            notesCount+=4;
+          }
+        }
       }
       else{
         playSingleNote(sound,"2n");
@@ -347,6 +762,112 @@ document.getElementById("quarterRest").addEventListener("click", function() {
         displayNote();
       }
 }, false);
+
+
+
+measure_edit.onchange = measureEdit;
+
+function measureEdit(){
+  switch (measure_edit.value){
+  case "measure1":
+    notesCount = 0;
+    notes[0] = "";
+    notes[1] = "";
+    notes[2] = "";
+    notes[3] = "";
+    notes[4] = "";
+    notes[5] = "";
+    notes[6] = "";
+    notes[7] = "";
+    displayNote();
+  break;
+  case "measure2": 
+    notesCount = 8;
+    notes[8] = "";
+    notes[9] = "";
+    notes[10] = "";
+    notes[11] = "";
+    notes[12] = "";
+    notes[13] = "";
+    notes[14] = "";
+    notes[15] = "";
+    displayNote();
+  break;
+  case "measure3":
+    notesCount = 16;
+    notes[16] = "";
+    notes[17] = "";
+    notes[18] = "";
+    notes[19] = "";
+    notes[20] = "";
+    notes[21] = "";
+    notes[22] = "";
+    notes[23] = "";
+    displayNote();
+  break;
+  case "measure4": 
+    notesCount = 24;
+    notes[24] = "";
+    notes[25] = "";
+    notes[26] = "";
+    notes[27] = "";
+    notes[28] = "";
+    notes[29] = "";
+    notes[30] = "";
+    notes[31] = "";
+    displayNote();
+  break;
+  case "measure5":
+    notesCount = 32;
+    notes[32] = "";
+    notes[33] = "";
+    notes[34] = "";
+    notes[35] = "";
+    notes[36] = "";
+    notes[37] = "";
+    notes[38] = "";
+    notes[39] = "";
+    displayNote();
+  break;
+  case "measure6":
+    notesCount = 40;
+    notes[40] = "";
+    notes[41] = "";
+    notes[42] = "";
+    notes[43] = "";
+    notes[44] = "";
+    notes[45] = "";
+    notes[46] = "";
+    notes[47] = "";
+    displayNote(); 
+  break;
+  case "measure7":
+    notesCount = 48;
+    notes[48] = "";
+    notes[49] = "";
+    notes[50] = "";
+    notes[51] = "";
+    notes[52] = "";
+    notes[53] = "";
+    notes[54] = "";
+    notes[55] = "";
+    displayNote();
+  break;
+  case "measure8": 
+    notesCount = 56;
+    notes[56] = "";
+    notes[57] = "";
+    notes[58] = "";
+    notes[59] = "";
+    notes[60] = "";
+    notes[61] = "";
+    notes[62] = "";
+    notes[63] = "";
+    displayNote();
+  break;
+  default:
+  }
+}
 
 const eighthNoteArray = ["C","D","E","F","G","A","B","c","d","e","C ","D ","E ","F ","G ","A ","B ","c ","d ","e "];
 const quarterNoteArray = ["C2","D2","E2","F2","G2","A2","B2","c2","d2","e2"];
