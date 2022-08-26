@@ -394,10 +394,13 @@ function measureEdit(){
 const wrong = new Audio('audio/wrong.mp3');
 
 function soundAndDisplayNote(sound,display) {
+  if(notesCount >= 56){
+        measure_edit.style.display = "block";
+  }
+
   if(eighthNote.checked){
       if(notesCount >= 64){
         wrong.play();
-        measure_edit.style.display = "block";
       }
       else if(measure_edit.value != "measureEdit"){
         if(measure_edit.value == "measure1"){
@@ -528,7 +531,6 @@ function soundAndDisplayNote(sound,display) {
     else if(quarterNote.checked){
       if(notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
-        measure_edit.style.display = "block";
       }
       else if(measure_edit.value != "measureEdit"){
         if(measure_edit.value == "measure1"){
@@ -597,7 +599,6 @@ function soundAndDisplayNote(sound,display) {
     else if(dottedQuarterNote.checked){
       if(notesCount%8 == 6 ||notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
-        measure_edit.style.display = "block";
       }
 
       else if(measure_edit.value != "measureEdit"){
@@ -668,7 +669,6 @@ function soundAndDisplayNote(sound,display) {
     else if(halfNote.checked){
       if(notesCount%8 == 5 || notesCount%8 == 6 || notesCount%8 == 7 || notesCount >= 64){
         wrong.play();
-        measure_edit.style.display = "block";
       }
       else if(measure_edit.value != "measureEdit"){
         if(measure_edit.value == "measure1"){
