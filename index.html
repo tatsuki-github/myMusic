@@ -189,7 +189,6 @@ function changeTempo(){
   case "tempo_160":
     bpm = 160;
     break;      
-  default: 
   }  
   switch (play_mode.value){
     case "play":
@@ -201,7 +200,6 @@ function changeTempo(){
     case "only_chord":
       chordRenderMidi(bpm);
       break;
-    default: 
   }  
 }
 
